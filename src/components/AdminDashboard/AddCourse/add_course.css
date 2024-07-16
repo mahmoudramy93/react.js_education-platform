@@ -1,0 +1,34 @@
+.addCourse {
+  width: 100%;
+}
+.addCourse p {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 2px solid #1367c9;
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+.addCourse label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+.addCourse input[type="text"]{
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.addCourse button[type="submit"] {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
