@@ -26,6 +26,7 @@
   border-radius: 5px;
   box-shadow: 0 0 5px;
   margin-bottom: 0;
+  z-index: 1;
 }
 .single-instructor-course .options-list::before {
   content: "";
