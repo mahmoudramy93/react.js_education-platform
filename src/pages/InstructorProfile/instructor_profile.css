@@ -1,0 +1,11 @@
+.instructor-profile .profile {
+  padding: 100px 0;
+}
+.profile .name h1 {
+  color: var(--dark-blue);
+}
+.profile .name p {
+  color: var(--paragraph-color);
+  font-size: 16px;
+  margin-bottom: 0;
+}
