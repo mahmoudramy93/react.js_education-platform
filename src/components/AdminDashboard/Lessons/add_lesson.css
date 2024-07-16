@@ -1,0 +1,42 @@
+.add-lesson .accordion-button {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--black-color);
+}
+.add-lesson .accordion-button:focus {
+  box-shadow: none;
+}
+.add-lesson {
+  width: 100%;
+}
+.add-lesson p {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 2px solid #1367c9;
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+.add-lesson label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+.add-lesson input[type="text"] {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.add-lesson button[type="submit"] {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
