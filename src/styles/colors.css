@@ -1,0 +1,14 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --main-color: #d95b14;
+  --dark-blue: #133e5a;
+  --paragraph-color: #888888;
+  --border-color: #e5f4fa;
+
+  /* dashboard color */
+  --dashboard-main-color: #919499;
+  --dashboard-border-color: #efefef;
+  --dashboard-bg-color: #f9f9f9;
+  --dashboard-component-color: #f6f6f5;
+}
