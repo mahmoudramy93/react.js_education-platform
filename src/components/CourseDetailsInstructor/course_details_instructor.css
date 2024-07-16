@@ -1,0 +1,41 @@
+.course-details-instructor-info {
+  border: 1px solid var(--border-color);
+  padding: 30px;
+}
+.course-details-instructor-info .alignleft {
+  margin-right: 20px;
+}
+.course-details-instructor-info .alignleft img {
+  width: 100%;
+  width: 80px;
+}
+.course-details-instructor-info {
+  display: flex;
+}
+.course-details-instructor-info .description h3 {
+  font-size: 17px;
+}
+.course-details-instructor-info .description h4 {
+  color: var(--paragraph-color);
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.course-details-instructor-info .description p {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+.course-details-instructor-info .description .view-profile {
+  text-decoration: none;
+  color: var(--black-color);
+  display: block;
+  border: 1px solid;
+  width: fit-content;
+  font-size: 14px;
+  padding: 8px;
+  transition: 0.4s all;
+}
+.course-details-instructor-info .description .view-profile:hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
