@@ -1,0 +1,17 @@
+.course-custom-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  border-bottom: 1px solid #e5f4fa;
+  padding: 15px 0;
+}
+
+.course-custom-title::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background-color: var(--main-color);
+  bottom: -1px;
+  left: 0;
+}
