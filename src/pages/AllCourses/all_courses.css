@@ -1,0 +1,43 @@
+.all-courses {
+  padding: 100px 0;
+}
+.all-courses form {
+  position: relative;
+}
+.all-courses form .form-control:focus,
+.all-courses form .form-control:active {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--main-color);
+}
+.all-courses .categories-container .search {
+  margin-bottom: 50px;
+}
+.all-courses .categories-container .search button {
+  position: absolute;
+  border: none;
+  background: no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  color: #ced4da;
+}
+.all-courses .categories li {
+  display: flex;
+  align-items: center;
+}
+.all-courses .categories li:not(:last-child) {
+  margin-bottom: 15px;
+}
+.all-courses .categories .form-check-input {
+  width: 20px;
+  height: 20px;
+}
+.all-courses .categories .form-check-input:active,
+.all-courses .categories .form-check-input:focus {
+  box-shadow: none;
+}
+.all-courses .categories .label {
+  margin-left: 10px;
+  font-size: 18px;
+}

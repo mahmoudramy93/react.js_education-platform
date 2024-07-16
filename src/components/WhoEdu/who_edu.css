@@ -1,0 +1,47 @@
+.who-edu {
+  padding: 0px 0 50px;
+}
+.who-edu .info-part {
+  background-color: #eee;
+}
+@media (max-width: 767px) {
+  .who-edu .info-part {
+    margin-bottom: 20px;
+  }
+}
+.who-edu .text {
+  padding: 30px;
+}
+.who-edu .text .title {
+  margin-bottom: 50px;
+}
+.who-edu .text .title h2 {
+  color: var(--black-color);
+  color: var(--dark-blue);
+  font-size: 40px;
+  margin-bottom: 0;
+}
+.who-edu .text .title p {
+  padding-left: 10px;
+  font-size: 16px;
+  color: var(--paragraph-color);
+}
+.who-edu .text .content ul li {
+  display: flex;
+  align-items: center;
+}
+.who-edu .text .content ul li:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.who-edu .text .content ul li svg {
+  color: var(--main-color);
+  font-size: 20px;
+  margin-right: 15px;
+}
+.who-edu .text .content ul li p {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.who-edu .image img {
+  max-width: 100%;
+}

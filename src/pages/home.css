@@ -1,0 +1,47 @@
+.landing-page {
+  background: url("../assets/home.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+.landing-page::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 70%);
+}
+.landing-page .text {
+  padding: 200px 0;
+  position: relative;
+  z-index: 2;
+}
+.landing-page .text h1 {
+  color: var(--white-color);
+  margin-bottom: 50px;
+}
+
+.landing-page .text p {
+  color: var(--white-color);
+  margin-bottom: 50px;
+}
+.landing-page .text .buttons {
+  margin-top: 30px;
+}
+.landing-page .text .buttons a {
+  border: 1px solid var(--main-color);
+  text-decoration: none;
+  color: var(--main-color);
+  transition: var(--main-transition);
+  padding: 10px 15px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+.landing-page .text .buttons a:hover,
+.landing-page .text .buttons a.active {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}

@@ -1,0 +1,33 @@
+.landing-other-pages {
+  background-image: url("../../assets/about.jpg");
+}
+
+.landing-other-pages .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.landing-other-pages .text h2 {
+  font-size: 50px;
+  color: var(--white-color);
+}
+
+.landing-other-pages .text a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-other-pages .text a span {
+  margin: 0 8px;
+}
+
+.landing-other-pages .text a p {
+  margin-bottom: 0;
+  color: var(--main-color);
+  font-weight: bold;
+}
