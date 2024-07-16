@@ -1,0 +1,110 @@
+.dashboard .header {
+  background-color: #f5f7fa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 30px 0 300px;
+}
+.dashboard .header .container-fluid {
+  padding: 0 20px;
+  justify-content: space-between;
+}
+.dashboard .header .bar-icon {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background-color: transparent;
+  margin-right: 15px;
+}
+.dashboard .header .logo img {
+  width: 70px;
+  max-width: 100%;
+  margin-right: 15px;
+}
+.dashboard .header .search form {
+  position: relative;
+}
+.dashboard .header .search .search-input {
+  background-color: #212a45;
+  color: var(--white-color);
+  font-size: 14px;
+}
+.dashboard .header .search .search-input::placeholder {
+  color: var(--paragraph-color);
+}
+.dashboard .header .search .search-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: #8a8f9d;
+  font-size: 15px;
+}
+.dashboard .header .flex {
+  flex: 1;
+}
+.dashboard .header .navbar-nav + .navbar-nav,
+.dashboard .header .navbar-nav .nav-item + .nav-item {
+  margin-left: 15px;
+}
+.dashboard .header .navbar-nav {
+  flex-direction: row;
+}
+.dashboard .header .navbar-nav .nav-link,
+.dashboard .header .navbar-nav button {
+  color: var(--dashboard-main-color);
+  transition: var(--main-transition);
+  font-weight: bold;
+  position: relative;
+}
+.dashboard .header .navbar-nav .nav-link:hover,
+.dashboard .header .navbar-nav button:hover {
+  color: var(--black-color);
+}
+.dashboard .header .badge {
+  background-color: red;
+  border-radius: 100px;
+  padding: 2px 5px;
+  position: relative;
+  left: -7px;
+  top: -6px;
+}
+.dashboard .header .profile {
+  width: 50px;
+  border-radius: 50%;
+}
+.dashboard .header .dropdown-menu {
+  position: absolute;
+  right: 20px;
+  margin-top: 8px;
+  display: none;
+  box-shadow: 0 5px 11px 0 rgba(56, 59, 61, 0.07);
+  border: none;
+}
+.dashboard .header .dropdown-menu.show {
+  display: block;
+}
+.dashboard .header .dropdown-menu::before {
+  content: "";
+  border-width: 8px;
+  border-style: solid;
+  position: absolute;
+  right: 3px;
+  top: -18px;
+  border-color: transparent transparent var(--white-color) transparent;
+}
+.dashboard .header .dropdown-menu .dropdown-item {
+  font-size: 14px;
+  color: var(--dashboard-main-color);
+}
+.dashboard .header .dropdown-menu .dropdown-item:hover {
+  color: var(--black-color);
+}
+.dashboard .header .dropdown-menu .dropdown-item span {
+  margin-right: 10px;
+}
+.dashboard .dropdown-toggle::after {
+  margin-left: -3px;
+  vertical-align: -3px;
+}

@@ -1,0 +1,9 @@
+.dashboard {
+  min-height: 100vh;
+}
+.dashboard .content {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px;
+  margin: 0 250px;
+}
