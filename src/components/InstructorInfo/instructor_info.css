@@ -1,0 +1,33 @@
+.instructor-info {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .instructor-info {
+    margin-top: 20px;
+  }
+}
+.profile-img img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+.profile-info {
+  margin-top: 30px;
+}
+.profile-info ul li:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.profile-info ul li a {
+  text-decoration: none;
+  border: 1px solid #f6f6f6;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8px 30px;
+  color: var(--black-color);
+  font-weight: bold;
+  transition: 0.4s all ease-in-out;
+}
+.profile-info ul li a:hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
