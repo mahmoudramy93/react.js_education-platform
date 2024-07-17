@@ -80,9 +80,6 @@ const UpdateCourse = () => {
           onChange={(e) => setTrack(e.target.value)}
         />
 
-        <button type="button" className="btn btn-secondary mb-4">
-          Update Lesson
-        </button>
         <button type="submit" className="btn btn-success">
           Update Course
         </button>

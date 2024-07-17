@@ -24,7 +24,7 @@ const PopularCourses = () => {
           </div>
         </Row>
         <Row>
-          {displayedCourses.map((course) => {
+          {displayedCourses&&displayedCourses.map((course) => {
             return (
               <div className="col-sm-6 col-lg-4" key={course._id}>
                 <CourseCard course={course} />

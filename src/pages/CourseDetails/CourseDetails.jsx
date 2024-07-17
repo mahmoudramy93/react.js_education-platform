@@ -1,4 +1,3 @@
-import React from "react";
 import { CourseReviwers } from "../../components/CourseReviwers/CourseReviwers";
 import { AddReview } from "../../components/AddReview/AddReview";
 import { CourseDetailsInstructor } from "../../components/CourseDetailsInstructor/CourseDetailsInstructor";
@@ -9,8 +8,24 @@ import { Footer } from "../../components/Footer/Footer";
 import { CourseH4Heading } from "../../components/CourseH4Heading/CourseH4Heading";
 
 import "./course_details.css";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCourseById } from "../../rtk/features/courses/coursesActions";
+import { fetchLessons } from "../../rtk/features/lessons/lessonsActions";
+import { CourseOutline } from "../../components/CourseOutline/CourseOutline";
 
 export const CourseDetails = () => {
+  const dispatch = useDispatch();
+  const { courseId } = useParams();
+  const course = useSelector((state) => state.courses.courses);
+  const lessons = useSelector((state) => state.lessons.lessons);
+
+  useEffect(() => {
+    dispatch(fetchCourseById(courseId));
+    dispatch(fetchLessons());
+  }, []);
+
   return (
     <>
       <Header />
@@ -22,18 +37,12 @@ export const CourseDetails = () => {
               <div className="main-img">
                 <img src={require("../../assets/course.jpg")} alt="course" />
               </div>
+              <div className="track text-center fw-bold mt-2 fs-3">
+                {course.track}
+              </div>
               <div className="content-wrapper">
                 <CourseH4Heading title={"Course Description"} />
-                <div className="content">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                  aliquid saepe, aperiam aut delectus repellendus consequatur
-                  asperiores quam ratione, aspernatur sit inventore
-                  necessitatibus autem magnam ipsam dolorem modi? Nihil, sint!
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                  aliquid saepe, aperiam aut delectus repellendus consequatur
-                  asperiores quam ratione, aspernatur sit inventore
-                  necessitatibus autem magnam ipsam dolorem modi? Nihil, sint!
-                </div>
+                <div className="content">{course.description}</div>
                 <h4 className="title">What You Will Learn</h4>
                 <div className="content">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
@@ -53,7 +62,34 @@ export const CourseDetails = () => {
                 </div>
                 <CourseH4Heading title={"Course Outline"} />
                 <div className="content">
-                  <ul className="course-list p-0">
+                  {lessons
+                    .filter((lesson) => lesson.course === course._id)
+                    .map((filterdLessons, index) => {
+                      return (
+                        // <ul key={filterdLessons._id}>
+                        //   <li className="mb-4">
+                        //     <CourseOutline
+                        //       lesson={filterdLessons}
+                        //       index={index + 1}
+                        //     />
+                        //   </li>
+                        // </ul>
+
+                        <ul
+                          className="course-list p-0"
+                          key={filterdLessons._id}
+                        >
+                          <li className="course-item mb-4">
+                            <CourseOutline
+                              lesson={filterdLessons}
+                              index={index + 1}
+                            />
+                          </li>
+                        </ul>
+                      );
+                    })}
+
+                  {/* <ul className="course-list p-0">
                     <li className="course-item">
                       <div className="lesson-wrapper">
                         <p className="course-title">Introduction Lesson</p>
@@ -130,7 +166,7 @@ export const CourseDetails = () => {
                         <li className="lesson-list-item">Lesson 3</li>
                       </ul>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
                 <CourseH4Heading title={"About Instructor"} />
                 <div className="cotnent">

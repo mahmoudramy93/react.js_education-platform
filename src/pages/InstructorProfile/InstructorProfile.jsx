@@ -9,22 +9,14 @@ import { CourseH4Heading } from "../../components/CourseH4Heading/CourseH4Headin
 import { fetchCoursesData } from "../../rtk/features/courses/coursesActions";
 
 import "./instructor_profile.css";
-import { useParams } from "react-router-dom";
 
 export const InstructorProfile = () => {
-  const courses = useSelector((state) => state.courses.courses);
-  const coursesCreator = useSelector((state) => state.creators.creator);
   const dispatch = useDispatch();
-  const { id } = useParams();
-
-  const filterByCreator = courses.filter(
-    (course) =>
-      coursesCreator.course_ids && coursesCreator.course_ids.includes(course.id)
-  );
+  const courseData = useSelector((state) => state.courses.courses);
 
   useEffect(() => {
     dispatch(fetchCoursesData());
-  }, [dispatch, id]);
+  }, []);
 
   return (
     <>
@@ -58,13 +50,16 @@ export const InstructorProfile = () => {
                     My courses (<span>2</span>)
                   </h4>
                   <div className="row">
-                    {filterByCreator.map((course) => {
-                      return (
-                        <div className="col-sm-12 col-lg-6" key={course.id}>
-                          <CourseCard course={course} />
-                        </div>
-                      );
-                    })}
+                    {courseData &&
+                      courseData
+                        .map((course) => {
+                          return (
+                            <div className="col-sm-6" key={course._id}>
+                              <CourseCard course={course} />
+                            </div>
+                          );
+                        })
+                        .slice(0, 4)}
                   </div>
                 </div>
               </div>

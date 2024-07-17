@@ -48,7 +48,7 @@ const courseSlice = createSlice({
       state.courses = action.payload;
     });
     // update course
-    builder.addCase(updateCourse.fulfilled, (state, action) => {
+    builder.addCase(updateCourse.fulfilled, (state) => {
       state.success = true;
     });
     // delete one course

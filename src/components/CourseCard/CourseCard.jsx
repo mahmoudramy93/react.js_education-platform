@@ -28,19 +28,19 @@ export const CourseCard = ({ course }) => {
       </div>
       <div className="single-course-text">
         <div className="course-header">
-          <Link to="/course_details" className="cat-btn">
+          <Link to={`/course_details/${course._id}`} className="cat-btn">
             {course.title}
           </Link>
         </div>
         <div className="course-info">
-          <Link to="/course_details">
+          <Link to={`/course_details/${course._id}`}>
             <h3>{course.title}</h3>
           </Link>
           <p>{course.description}</p>
         </div>
         <div className="author-info">
           <div className="author-img">
-            <Link to={`/instructor_profile/${course.course_creator_id}`}>
+            <Link to="/instructor_profile">
               <img src={require("../../assets/author.jpg")} alt="author" />
             </Link>
           </div>

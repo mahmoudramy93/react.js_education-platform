@@ -87,28 +87,17 @@ const SingleInstructorCourse = () => {
                       ""
                     )}
                     <h5 className="card-title">{course.title}</h5>
-                    <p className="card-text">{course.description}</p>
-                    <Accordion>
-                      <Accordion.Item>
-                        <Accordion.Header>
-                          Lessons
-                          {
-                            lessonsData.filter(
-                              (lesson) => lesson.course === course._id
-                            ).length
-                          }
-                        </Accordion.Header>
-                        {lessonsData
-                          .filter((lesson) => lesson.course === course._id)
-                          .map((lesson) => {
-                            return (
-                              <Accordion.Body key={lesson._id}>
-                                <CourseLessons lesson={lesson} />
-                              </Accordion.Body>
-                            );
-                          })}
-                      </Accordion.Item>
-                    </Accordion>
+                    <p className="card-text mb-1">{course.description}</p>
+                    <Link to={`/course_details/${course._id}`}>
+                      Number of Lessons {""}
+                      <span>
+                        {
+                          lessonsData.filter(
+                            (lesson) => lesson.course === course._id
+                          ).length
+                        }
+                      </span>
+                    </Link>
                   </div>
                 </div>
               </div>
