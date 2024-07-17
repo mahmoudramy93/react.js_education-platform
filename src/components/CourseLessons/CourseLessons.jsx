@@ -1,12 +1,11 @@
-import Accordion from "react-bootstrap/Accordion";
-
 const CourseLessons = ({ lesson }) => {
-  console.log(lesson);
   return (
-    <>
-      <p>{lesson.title}</p>
-      <a href={lsesson.video}>explain</a>
-    </>
+    <div className="d-flex align-items-center justify-content-between mb-2">
+      <p className="mb-0">{lesson.title}</p>
+      <a href={lesson.video} target="_blank">
+        explain
+      </a>
+    </div>
   );
 };
 

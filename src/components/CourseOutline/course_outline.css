@@ -1,0 +1,13 @@
+.accordion button {
+  padding: 10px !important;
+  background-color: var(--white-color) !important;
+}
+.accordion-body {
+  padding: 15px 10px !important;
+}
+.lesson-list.active {
+  display: block !important;
+}
+.lesson-list-item > div {
+  padding: 0 15px 0 0;
+}

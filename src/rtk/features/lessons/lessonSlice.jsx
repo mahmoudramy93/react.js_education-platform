@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addLesson, fetchLessons } from "./lessonsActions";
+import { addLesson, fetchLessons, getLessonsByCourseId } from "./lessonsActions";
 
 const initialState = {
   lessons: [],
@@ -20,6 +20,9 @@ const LessonsSlice = createSlice({
       state.success = true;
     });
     builder.addCase(fetchLessons.fulfilled, (state, action) => {
+      state.lessons = action.payload;
+    });
+    builder.addCase(getLessonsByCourseId.fulfilled, (state, action) => {
       state.lessons = action.payload;
     });
   },

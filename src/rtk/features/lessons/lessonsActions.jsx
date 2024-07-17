@@ -38,3 +38,23 @@ export const fetchLessons = createAsyncThunk(
     }
   }
 );
+
+
+export const getLessonsByCourseId = createAsyncThunk(
+  "courses/getLessonsByCourseId",
+  async (courseId) => {
+    try {
+      const res = await axios.get(`${api}/course/${courseId}`);
+      return res.data;
+    } catch (error) {
+      if (error.response) {
+        console.log("server responded");
+      } else if (error.request) {
+        console.log("network error");
+      } else {
+        console.log(error);
+      }
+    }
+  }
+);
+
