@@ -18,6 +18,7 @@ const UpdateCourse = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [track, setTrack] = useState("");
+  const [image_url, setImageUrl] = useState("");
 
   useEffect(() => {
     dispatch(fetchCourseById(courseId));
@@ -27,6 +28,8 @@ const UpdateCourse = () => {
     if (courseData) {
       setTitle(courseData.title || "");
       setDescription(courseData.description || "");
+      setTrack(courseData.track || "");
+      setImageUrl(courseData.image_url || "");
     }
   }, [courseData]);
 
@@ -35,6 +38,8 @@ const UpdateCourse = () => {
     const newData = {
       title: title,
       description: description,
+      track: track,
+      image_url: image_url,
     };
 
     dispatch(updateCourse({ courseId, data: newData }));
@@ -50,44 +55,53 @@ const UpdateCourse = () => {
   }, [success]);
 
   return (
-    <div className="addCourse">
-      <p>Update Course</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="course-name">Course Name</label>
-        <input
-          type="text"
-          id="course-name"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+    <>
+      <div className="addCourse">
+        <p>Update Course</p>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="course-name">Course Name</label>
+          <input
+            type="text"
+            id="course-name"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-        <label htmlFor="course-description">Course Description:</label>
-        <input
-          type="text"
-          id="course-description"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+          <label htmlFor="course-description">Course Description:</label>
+          <input
+            type="text"
+            id="course-description"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
-        <label htmlFor="course-track">Course Track:</label>
-        <input
-          type="text"
-          id="course-track"
-          name="track"
-          value={track}
-          onChange={(e) => setTrack(e.target.value)}
-        />
-
-        <button type="submit" className="btn btn-success">
-          Update Course
-        </button>
-      </form>
-      {success ? (
-        <SuccessMessage message={"Data Updated Successfully"} />
-      ) : null}
-    </div>
+          <label htmlFor="course-track">Course Track:</label>
+          <input
+            type="text"
+            id="course-track"
+            name="track"
+            value={track}
+            onChange={(e) => setTrack(e.target.value)}
+          />
+          <label htmlFor="course-img">Img Url:</label>
+          <input
+            type="text"
+            id="course-img"
+            name="image_url"
+            value={image_url}
+            onChange={(e) => setImageUrl(e.target.value)}
+          />
+          <button type="submit" className="btn btn-success">
+            Update Course
+          </button>
+        </form>
+        {success ? (
+          <SuccessMessage message={"Data Updated Successfully"} />
+        ) : null}
+      </div>
+    </>
   );
 };
 

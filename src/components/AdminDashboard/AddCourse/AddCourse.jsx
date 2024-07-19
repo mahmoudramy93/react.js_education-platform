@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import "./add_course.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +24,7 @@ const AddCourse = () => {
     const courseData = {
       ...coursesInputs,
     };
+    console.log(coursesInputs);
     dispatch(addCourseToApi(courseData));
   };
 
@@ -63,6 +64,14 @@ const AddCourse = () => {
             id="course-track"
             name="track"
             value={coursesInputs.track || ""}
+            onChange={handleOnChange}
+          />
+          <label htmlFor="course-img">Img Url:</label>
+          <input
+            type="text"
+            id="course-img"
+            name="image_url"
+            value={coursesInputs.image_url || ""}
             onChange={handleOnChange}
           />
           <button type="submit" className="btn btn-success">

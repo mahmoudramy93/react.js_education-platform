@@ -17,13 +17,15 @@ export const AllCourses = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
 
-  const filterdCoursesBySearch = courses.filter((course) =>
-    course.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filterdCoursesBySearch = Array.isArray(courses)
+    ? courses.filter((course) =>
+        course.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   useEffect(() => {
     dispatch(fetchCoursesData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

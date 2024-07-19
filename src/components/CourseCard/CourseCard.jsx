@@ -15,11 +15,7 @@ export const CourseCard = ({ course }) => {
   return (
     <div className="single_course mb-4" key={course.id} data-aos="fade-up">
       <div className="position-relative img-wrapper">
-        <img
-          src={require("../../assets/course.jpg")}
-          alt={course.title}
-          className="course-img"
-        />
+        <img src={course.image_url} alt={course.title} className="course-img" />
         <div className="overlay">
           <p className="mb-0">
             <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>

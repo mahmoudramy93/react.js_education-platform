@@ -7,13 +7,14 @@ import { Landing } from "../../components/Landing/Landing";
 import { Footer } from "../../components/Footer/Footer";
 import { CourseH4Heading } from "../../components/CourseH4Heading/CourseH4Heading";
 
-import "./course_details.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseById } from "../../rtk/features/courses/coursesActions";
 import { fetchLessons } from "../../rtk/features/lessons/lessonsActions";
 import { CourseOutline } from "../../components/CourseOutline/CourseOutline";
+
+import "./course_details.css";
 
 export const CourseDetails = () => {
   const dispatch = useDispatch();
@@ -35,10 +36,7 @@ export const CourseDetails = () => {
           <div className="row">
             <div className="col-sm-12 col-lg-8 course-details-left">
               <div className="main-img">
-                <img src={require("../../assets/course.jpg")} alt="course" />
-              </div>
-              <div className="track text-center fw-bold mt-2 fs-3">
-                {course.track}
+                <img src={course.image_url} alt="course" />
               </div>
               <div className="content-wrapper">
                 <CourseH4Heading title={"Course Description"} />
@@ -66,15 +64,6 @@ export const CourseDetails = () => {
                     .filter((lesson) => lesson.course === course._id)
                     .map((filterdLessons, index) => {
                       return (
-                        // <ul key={filterdLessons._id}>
-                        //   <li className="mb-4">
-                        //     <CourseOutline
-                        //       lesson={filterdLessons}
-                        //       index={index + 1}
-                        //     />
-                        //   </li>
-                        // </ul>
-
                         <ul
                           className="course-list p-0"
                           key={filterdLessons._id}
@@ -88,85 +77,6 @@ export const CourseDetails = () => {
                         </ul>
                       );
                     })}
-
-                  {/* <ul className="course-list p-0">
-                    <li className="course-item">
-                      <div className="lesson-wrapper">
-                        <p className="course-title">Introduction Lesson</p>
-                        <a href="!#" className="view-btn">
-                          View Details
-                        </a>
-                      </div>
-                      <ul className="lesson-list">
-                        <li className="lesson-list-item">Lesson 1</li>
-                        <li className="lesson-list-item">Lesson 2</li>
-                      </ul>
-                    </li>
-                    <li className="course-item">
-                      <div className="lesson-wrapper">
-                        <p className="course-title">Introduction Lesson</p>
-                        <a href="!#" className="view-btn">
-                          View Details
-                        </a>
-                      </div>
-                      <ul className="lesson-list">
-                        <li className="lesson-list-item">Lesson 1</li>
-                        <li className="lesson-list-item">Lesson 2</li>
-                        <li className="lesson-list-item">Lesson 3</li>
-                      </ul>
-                    </li>
-                    <li className="course-item">
-                      <div className="lesson-wrapper">
-                        <p className="course-title">Introduction Lesson</p>
-                        <a href="!#" className="view-btn">
-                          View Details
-                        </a>
-                      </div>
-                      <ul className="lesson-list">
-                        <li className="lesson-list-item">Lesson 1</li>
-                        <li className="lesson-list-item">Lesson 2</li>
-                        <li className="lesson-list-item">Lesson 3</li>
-                      </ul>
-                    </li>
-                    <li className="course-item">
-                      <div className="lesson-wrapper">
-                        <p className="course-title">Introduction Lesson</p>
-                        <a href="!#" className="view-btn">
-                          View Details
-                        </a>
-                      </div>
-                      <ul className="lesson-list">
-                        <li className="lesson-list-item">Lesson 1</li>
-                        <li className="lesson-list-item">Lesson 2</li>
-                        <li className="lesson-list-item">Lesson 3</li>
-                      </ul>
-                    </li>
-                    <li className="course-item">
-                      <div className="lesson-wrapper">
-                        <p className="course-title">Introduction Lesson</p>
-                        <a href="!#" className="view-btn">
-                          View Details
-                        </a>
-                      </div>
-                      <ul className="lesson-list">
-                        <li className="lesson-list-item">Lesson 1</li>
-                        <li className="lesson-list-item">Lesson 2</li>
-                      </ul>
-                    </li>
-                    <li className="course-item">
-                      <div className="lesson-wrapper">
-                        <p className="course-title">Introduction Lesson</p>
-                        <a href="!#" className="view-btn">
-                          View Details
-                        </a>
-                      </div>
-                      <ul className="lesson-list">
-                        <li className="lesson-list-item">Lesson 1</li>
-                        <li className="lesson-list-item">Lesson 2</li>
-                        <li className="lesson-list-item">Lesson 3</li>
-                      </ul>
-                    </li>
-                  </ul> */}
                 </div>
                 <CourseH4Heading title={"About Instructor"} />
                 <div className="cotnent">

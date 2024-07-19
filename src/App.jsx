@@ -20,6 +20,8 @@ import AddCourse from "./components/AdminDashboard/AddCourse/AddCourse";
 import DashboardInstructorHome from "./components/DashboardInstructorHome/DashboardInstructorHome";
 import { CourseDetailsInstructor } from "./components/CourseDetailsInstructor/CourseDetailsInstructor";
 import UpdateCourse from "./components/AdminDashboard/UpdateCourse/UpdateCourse";
+import Tracks from "./components/AdminDashboard/Tracks/Tracks";
+import ManageTracks from "./components/AdminDashboard/ManageTracks/ManageTracks";
 
 function App() {
   return (
@@ -30,9 +32,9 @@ function App() {
           <Route path="/all_courses" element={<AllCourses />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<ContactUs />}></Route>
-          <Route path="/course_details" element={<CourseDetails />}></Route>
+          <Route path="/course_details/:courseId" element={<CourseDetails />}></Route>
           <Route
-            path="/instructor_profile/:id"
+            path="/instructor_profile"
             element={<InstructorProfile />}
           ></Route>
           <Route
@@ -45,6 +47,8 @@ function App() {
               path="dashboard_instructor_home"
               element={<DashboardInstructorHome />}
             ></Route>
+            <Route path="tracks" element={<Tracks />}></Route>
+            <Route path="manage_tracks" element={<ManageTracks />}></Route>
             <Route path="instructor_courses" element={<InstructorCourses />}>
               <Route path="add_course" element={<AddCourse />}></Route>
               <Route

@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -30,9 +31,9 @@ const Header = () => {
       <div>
         <ul className="navbar-nav align-items-center">
           <li className="nav-item">
-            <a href="!#" className="nav-link">
+            <Link to="" className="nav-link">
               <FontAwesomeIcon icon={faCartShopping} />
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <button className="btn d-flex align-items-center">
@@ -41,14 +42,14 @@ const Header = () => {
             </button>
           </li>
           <li className="dropdown">
-            <a className="nav-link dropdown-toggle" href="!#">
+            <Link to='' className="nav-link dropdown-toggle">
               <img
                 src={require("../../../assets/dashboardImgs/author.jpg")}
                 alt="author"
                 loading="lazy"
                 className="profile"
               />
-            </a>
+            </Link>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="public_profile.html">
                 <span>

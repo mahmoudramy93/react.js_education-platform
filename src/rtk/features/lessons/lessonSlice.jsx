@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addLesson, fetchLessons, getLessonsByCourseId } from "./lessonsActions";
+import {
+  addLesson,
+  fetchLessonById,
+  fetchLessons,
+  getLessonsByCourseId,
+  updateLesson,
+} from "./lessonsActions";
 
 const initialState = {
   lessons: [],
@@ -21,6 +27,14 @@ const LessonsSlice = createSlice({
     });
     builder.addCase(fetchLessons.fulfilled, (state, action) => {
       state.lessons = action.payload;
+    });
+    // fetch lesson by id
+    builder.addCase(fetchLessonById.fulfilled, (state, action) => {
+      state.lessons = action.payload;
+    });
+    // update lesson
+    builder.addCase(updateLesson.fulfilled, (state) => {
+      state.success = true;
     });
     builder.addCase(getLessonsByCourseId.fulfilled, (state, action) => {
       state.lessons = action.payload;

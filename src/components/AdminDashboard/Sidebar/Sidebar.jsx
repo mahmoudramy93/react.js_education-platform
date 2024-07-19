@@ -6,6 +6,7 @@ import {
   faCircleQuestion,
   faEnvelope,
   faGear,
+  faGripLines,
   faHouse,
   faMagnifyingGlass,
   faSquarePollVertical,
@@ -37,59 +38,22 @@ const Sidebar = () => {
               className={({ isActive }) =>
                 `sidebar-menu-button ${isActive ? "active" : ""}`
               }
-              to="/student_dashboard"
+              to="/admin_dashboard"
             >
               <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
               Home
             </NavLink>
           </li>
           <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
-              Browse Courses
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faBookOpenReader}></FontAwesomeIcon>
-              My Courses
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faTv}></FontAwesomeIcon>
-              Take a Quiz
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faSquarePollVertical}></FontAwesomeIcon>
-              Quiz Results
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <Link
-              className="sidebar-menu-button"
-              to="/student_dashboard/edit_account"
+            <NavLink
+              className={({ isActive }) =>
+                `sidebar-menu-button ${isActive ? "active" : ""}`
+              }
+              to="/admin_dashboard/tracks"
             >
-              <FontAwesomeIcon icon={faSquarePollVertical}></FontAwesomeIcon>
-              Edit Account
-            </Link>
-          </li>
-          <li className="sidebar-menu-item">
-            <Link
-              to="/student_dashboard/billing"
-              className="sidebar-menu-button"
-            >
-              <FontAwesomeIcon icon={faSquarePollVertical}></FontAwesomeIcon>
-              Billing
-            </Link>
-          </li>
-          <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="/login">
-              <FontAwesomeIcon icon={faSquarePollVertical}></FontAwesomeIcon>
-              Logout
-            </a>
+              <FontAwesomeIcon icon={faGripLines}></FontAwesomeIcon>
+              Tracks
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -118,40 +82,25 @@ const Sidebar = () => {
               Courses
             </NavLink>
           </li>
-          <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>
-              Quiz Manager
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faArrowTrendUp}></FontAwesomeIcon>
-              Earnings
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faGear}></FontAwesomeIcon>
-              Settings
-            </a>
-          </li>
         </ul>
       </div>
       <div className="admin">
         <div className="sidebar-heading">Admin</div>
         <ul className="sidebar-menu">
           <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
+            <Link to='' className="sidebar-menu-button">
               <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
               Home
-            </a>
+            </Link>
           </li>
           <li className="sidebar-menu-item">
-            <a className="sidebar-menu-button" href="!#">
-              <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-              Emails
-            </a>
+            <Link
+              to="/admin_dashboard/manage_tracks"
+              className="sidebar-menu-button"
+            >
+              <FontAwesomeIcon icon={faGripLines}></FontAwesomeIcon>
+              Manage Tracks
+            </Link>
           </li>
         </ul>
       </div>

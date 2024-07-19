@@ -5,10 +5,13 @@ import {
   fetchCoursesData,
   fetchCourseById,
   updateCourse,
+  getCoursesByTrackId,
 } from "./coursesActions";
 
 const initialState = {
   courses: [],
+  frontendCourses: [],
+  backendCourses: [],
   error: "",
   success: false,
   loading: false,
@@ -57,6 +60,15 @@ const courseSlice = createSlice({
         (course) => course.id !== action.payload
       );
       state.error = "Failed to Delete data";
+    });
+    // get courses by track id
+    builder.addCase(getCoursesByTrackId.fulfilled, (state, action) => {
+      const whichTrack = action.meta.arg.track;
+      if (whichTrack.toLowerCase() === "frontend") {
+        state.frontendCourses = action.payload;
+      } else if (whichTrack.toLowerCase() === "backend") {
+        state.backendCourses = action.payload;
+      }
     });
   },
 });

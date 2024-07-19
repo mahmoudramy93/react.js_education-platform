@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
-import Accordion from "react-bootstrap/Accordion";
 import {
   deleteCourse,
   fetchCoursesData,
@@ -13,7 +12,6 @@ import "./single_instructor_course.css";
 import { Button } from "react-bootstrap";
 
 import VueJs from "../../../assets/vuejs.png";
-import CourseLessons from "./../../CourseLessons/CourseLessons";
 
 const SingleInstructorCourse = () => {
   const coursesData = useSelector((state) => state.courses.courses);
@@ -48,7 +46,8 @@ const SingleInstructorCourse = () => {
               <div className="row g-0">
                 <div className="col-md-4">
                   <img
-                    src={VueJs}
+                    // src={VueJs}
+                    src={course.image_url}
                     className="img-fluid rounded-start"
                     alt="nodejs"
                     loading="lazy"

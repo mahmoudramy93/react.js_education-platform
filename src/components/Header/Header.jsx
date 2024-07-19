@@ -74,7 +74,7 @@ export const Header = () => {
                 </li>
                 <li id="register">
                   <FontAwesomeIcon icon={faCircleUser} />
-                  <Link to="/admin_dashboard">Welcome</Link>
+                  <Link to="/admin_dashboard/instructor_courses">Welcome</Link>
                 </li>
               </ul>
             </div>

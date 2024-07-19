@@ -41,7 +41,7 @@ const AddLesson = () => {
       <form onSubmit={handleSubmit}>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Lesson 1</Accordion.Header>
+            <Accordion.Header>Lesson </Accordion.Header>
             <Accordion.Body>
               <label htmlFor="title">Lesson title:</label>
               <input
