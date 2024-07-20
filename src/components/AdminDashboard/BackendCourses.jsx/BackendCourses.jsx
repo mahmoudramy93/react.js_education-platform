@@ -4,7 +4,7 @@ import { getCoursesByTrackId } from "../../../rtk/features/courses/coursesAction
 import CoruseTrack from "../CourseTrack/CoruseTrack";
 
 const BackendCourses = () => {
-  const backendTrackId = "6698fa62717be96951149dde";
+  const backendTrackId = "669c09cdcea52da6612b8e5f";
   const dispatch = useDispatch();
   const backendCourses = useSelector((state) => state.courses.backendCourses);
 
@@ -21,7 +21,7 @@ const BackendCourses = () => {
     <div className="row">
       {backendCourses.map((course) => {
         return (
-          <div className="col-6" key={course._id}>
+          <div className="col-12" key={course._id}>
             <CoruseTrack course={course} />
           </div>
         );

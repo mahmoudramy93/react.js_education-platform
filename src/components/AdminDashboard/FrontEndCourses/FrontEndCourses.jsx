@@ -5,7 +5,7 @@ import { getCoursesByTrackId } from "../../../rtk/features/courses/coursesAction
 
 const FrontEndCourses = () => {
   const dispatch = useDispatch();
-  const frontendTrackId = "66963bc03bc9e532150541b9";
+  const frontendTrackId = "669bf117cea52da6612b8e11";
   const frontendCourses = useSelector((state) => state.courses.frontendCourses);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const FrontEndCourses = () => {
     <div className="row">
       {frontendCourses.map((course) => {
         return (
-          <div className="col-6" key={course._id}>
+          <div className="col-12" key={course._id}>
             <CoruseTrack course={course} />
           </div>
         );

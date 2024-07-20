@@ -4,7 +4,7 @@ const CoruseTrack = ({ course }) => {
   return (
     <div className="card mb-5 single-instructor-course p-0">
       <div className="row g-0">
-        <div className="col-md-6">
+        <div className="col-md-4 d-flex align-items-center justify-content-center">
           <img
             src={course.image_url}
             className="img-fluid rounded-start object-fit-cover"
@@ -12,7 +12,7 @@ const CoruseTrack = ({ course }) => {
             loading="lazy"
           />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-8">
           <div className="card-body position-relative">
             <Link
               to={`/course_details/${course._id}`}

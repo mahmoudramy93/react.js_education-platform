@@ -24,7 +24,6 @@ const AddCourse = () => {
     const courseData = {
       ...coursesInputs,
     };
-    console.log(coursesInputs);
     dispatch(addCourseToApi(courseData));
   };
 

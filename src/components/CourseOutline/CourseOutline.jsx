@@ -35,8 +35,8 @@ export const CourseOutline = ({ lesson }) => {
           {videoUrl && (
             <div className="mt-3">
               <iframe
-                width="560"
-                height="315"
+                width='100%'
+                height="470"
                 src={videoUrl}
                 frameBorder="0"
                 allowFullScreen
