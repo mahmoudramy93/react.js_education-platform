@@ -35,7 +35,7 @@ export const CourseDetails = () => {
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-lg-8 course-details-left">
-              <div className="main-img">
+              <div className="main-img d-flex align-items-center justify-content-center">
                 <img src={course.image_url} alt="course" />
               </div>
               <div className="content-wrapper">

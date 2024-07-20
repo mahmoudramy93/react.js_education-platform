@@ -51,15 +51,16 @@ export const InstructorProfile = () => {
                   </h4>
                   <div className="row">
                     {courseData &&
-                      courseData
-                        .map((course) => {
+                    Array.isArray(courseData) &&
+                    courseData.length > 0
+                      ? courseData.slice(0, 4).map((course) => {
                           return (
                             <div className="col-sm-6" key={course._id}>
                               <CourseCard course={course} />
                             </div>
                           );
                         })
-                        .slice(0, 4)}
+                      : null}
                   </div>
                 </div>
               </div>
