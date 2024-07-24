@@ -13,10 +13,25 @@ const AddCourse = () => {
   const success = useSelector((state) => state.courses.success);
   const dispatch = useDispatch();
 
+  const tracks = [
+    { id: "669c09cdcea52da6612b8e5f", name: "Backend" },
+    { id: "669bf117cea52da6612b8e11", name: "Frontend" },
+    { id: "66a1180739b8e8041875949d", name: "DevOps" },
+  ];
+
   const handleOnChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    dispatch(setCoursesInputs({ ...coursesInputs, [name]: value }));
+    if (name === "track") {
+      const selectedTrack = tracks.find((track) => track.name === value);
+      if (selectedTrack) {
+        dispatch(
+          setCoursesInputs({ ...coursesInputs, [name]: selectedTrack.id })
+        );
+      }
+    } else {
+      dispatch(setCoursesInputs({ ...coursesInputs, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -24,6 +39,7 @@ const AddCourse = () => {
     const courseData = {
       ...coursesInputs,
     };
+    console.log(coursesInputs);
     dispatch(addCourseToApi(courseData));
   };
 
@@ -58,13 +74,23 @@ const AddCourse = () => {
             onChange={handleOnChange}
           />
           <label htmlFor="course-track">Course Track:</label>
-          <input
-            type="text"
+          <select
+            className="mb-4 mt-2"
             id="course-track"
             name="track"
-            value={coursesInputs.track || ""}
+            value={
+              tracks.find((track) => track.id === coursesInputs.track)?.name ||
+              ""
+            }
             onChange={handleOnChange}
-          />
+          >
+            <option value="">Select Track</option>
+            {tracks.map((track) => (
+              <option key={track.id} value={track.name}>
+                {track.name}
+              </option>
+            ))}
+          </select>
           <label htmlFor="course-img">Img Url:</label>
           <input
             type="text"

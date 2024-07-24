@@ -15,7 +15,7 @@
   color: #555;
   font-weight: bold;
 }
-.addCourse input[type="text"]{
+.addCourse input[type="text"] {
   width: 100%;
   margin-bottom: 15px;
   padding: 10px;
@@ -31,4 +31,10 @@
   cursor: pointer;
   width: 100%;
   font-size: 16px;
+}
+.addCourse select {
+  width: 100%;
+  padding: 10px;
+  border-color: var(--dashboard-border-color);
+  border-radius: 5px;
 }

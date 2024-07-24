@@ -21,6 +21,7 @@ const ManageTracks = () => {
     event.preventDefault();
     dispatch(addTrack(inputs));
     navigate("/admin_dashboard/tracks");
+
   };
 
   return (

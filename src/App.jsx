@@ -26,13 +26,16 @@ import ManageTracks from "./components/AdminDashboard/ManageTracks/ManageTracks"
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/edu_city/">
+      <BrowserRouter >
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/all_courses" element={<AllCourses />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<ContactUs />}></Route>
-          <Route path="/course_details/:courseId" element={<CourseDetails />}></Route>
+          <Route
+            path="/course_details/:courseId"
+            element={<CourseDetails />}
+          ></Route>
           <Route
             path="/instructor_profile"
             element={<InstructorProfile />}
