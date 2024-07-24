@@ -74,5 +74,4 @@ The optimized production build will be stored in the dist directory.
 ### Safeya Yasien
 
 - **LinkedIn**: [linkedin.com/in/safeya-yasien](https://www.linkedin.com/in/safeya-yasien)
-- **Twitter**: [twitter.com/safeya_yasien](https://www.twitter.com/safeya_yasien)
 - **GitHub**: [github.com/safeya-yasien](https://www.github.com/safeya-yasien)
